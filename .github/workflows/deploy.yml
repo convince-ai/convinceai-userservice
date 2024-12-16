@@ -28,15 +28,15 @@ jobs:
         run: npm run build
 
       - name: Generate Deployment Package
-        run: zip -r conviceai-usersservice.zip . -x 'node_modules/*' -x 'requests/*' -x "test/*" 
+        run: zip -r conviceai-userservice.zip . -x 'node_modules/*' -x 'requests/*' -x "test/*" 
 
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: 'conviceai-usersservice'
-          environment_name: 'conviceai-usersservice-env'
+          application_name: 'conviceai-userservice'
+          environment_name: 'conviceai-userservice-env'
           version_label: ${{ github.sha }}
           region: us-east-1
-          deployment_package: conviceai-usersservice.zip
+          deployment_package: conviceai-userservice.zip
