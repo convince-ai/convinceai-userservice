@@ -11,7 +11,7 @@ async function bootstrap() {
 
   // Configuração de CORS
   app.enableCors({
-    origin: ['http://localhost:3001', 'https://convinceai.netlify.app','http://convinceai.surge.sh/'], // Domínios permitidos
+    origin: ['http://localhost:3001', 'https://convinceai.netlify.app','http://convinceai.surge.sh'], // Domínios permitidos
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Métodos permitidos
     credentials: true, // Se necessário enviar cookies ou credenciais
   });
